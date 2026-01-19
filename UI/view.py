@@ -41,9 +41,10 @@ class View:
         self.lista_visualizzazione_1 = ft.ListView(expand=1, spacing=10, padding=20, auto_scroll=True)
 
         # Riga 2
-        self.dd_album = ft.Dropdown(label="Album", width=200, on_change=self.controller.get_selected_album)
+        self.dd_album = ft.Dropdown(label="Album", width=200)
         self.pulsante_analisi_comp = ft.ElevatedButton(text="Analisi Componente",
-                                                 on_click=self.controller.handle_analisi_comp)
+                                                 on_click=self.controller.handle_analisi_comp,
+                                                       disabled=True)
         row2 = ft.Row([
             ft.Container(self.dd_album, width=200),
             ft.Container(self.pulsante_analisi_comp, width=200)
@@ -54,7 +55,8 @@ class View:
         # Riga 3
         self.txt_durata_totale = ft.TextField(label="Durata Totale")
         self.pulsante_set_album = ft.ElevatedButton(text="Set di Album",
-                                                    on_click=self.controller.handle_get_set_album)
+                                                    on_click=self.controller.handle_get_set_album,
+                                                    disabled = True)
         row3 = ft.Row([
             ft.Container(self.txt_durata_totale, width=200),
             ft.Container(self.pulsante_set_album, width=200)
